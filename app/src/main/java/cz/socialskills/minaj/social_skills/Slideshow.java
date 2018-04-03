@@ -1,4 +1,4 @@
-package cz.socialskills.minaj.socialskills;
+package cz.socialskills.minaj.social_skills;
 
 /**
  * Created by Minaj on 21.05.2017.

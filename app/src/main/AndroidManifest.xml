@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cz.socialskills.minaj.socialskills">
+    package="cz.socialskills.minaj.social_skills">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar">
 
-        <activity android:name=".MainActivity"
+        <activity android:name="cz.socialskills.minaj.social_skills.MainActivity"
             android:screenOrientation="landscape"
             android:configChanges="keyboardHidden|orientation">
 

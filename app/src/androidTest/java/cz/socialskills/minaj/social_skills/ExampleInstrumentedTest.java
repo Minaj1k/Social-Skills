@@ -1,4 +1,4 @@
-package cz.socialskills.minaj.socialskills;
+package cz.socialskills.minaj.social_skills;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("cz.socialskills.minaj.socialskills", appContext.getPackageName());
+        assertEquals("cz.social_skills.minaj.social_skills", appContext.getPackageName());
     }
 }

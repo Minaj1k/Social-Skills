@@ -1,4 +1,4 @@
-package cz.socialskills.minaj.socialskills;
+package cz.socialskills.minaj.social_skills;
 
 import android.graphics.Bitmap;
 

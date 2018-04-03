@@ -1,4 +1,4 @@
-package cz.socialskills.minaj.socialskills;
+package cz.socialskills.minaj.social_skills;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -6,12 +6,9 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Environment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Display;
 import android.view.Window;
 import android.view.WindowManager;
-import android.webkit.ConsoleMessage;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -23,7 +20,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
-import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -73,19 +69,19 @@ public class MainActivity extends FragmentActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //RelativeLayout layout =(RelativeLayout)findViewById(R.id.imageView2);
         //getWindow().setBackgroundDrawableResource(R.drawable.one);
-        setContentView(R.layout.activity_main);
+        setContentView(cz.socialskills.minaj.social_skills.R.layout.activity_main);
         //Display display = getWindowManager().getDefaultDisplay().getWidth();
 
         devWidth = getWindowManager().getDefaultDisplay().getWidth();            // Šířka displeje
         devHeight = getWindowManager().getDefaultDisplay().getHeight();          // Výška displeje
 
-        iv = (ImageView) findViewById(R.id.imageView2);         // Obrázek pozadí
-        tv = (TextView) findViewById(R.id.textView);            // Text pro scénu
-        ib1 = (ImageButton) findViewById(R.id.imageButton);     // Tlačítko další obrázek
-        ib2 = (ImageButton) findViewById(R.id.imageButton2);    // Tlačítko přechozí obrázek
-        ib3 = (ImageButton) findViewById(R.id.imageButton3);    // Tlačítko ukončit scénu
-        ib4 = (ImageButton) findViewById(R.id.imageButton4);    // Tlačítko zpět
-        lv = (ListView) findViewById(R.id.menuListView);        // Menu
+        iv = (ImageView) findViewById(cz.socialskills.minaj.social_skills.R.id.imageView2);         // Obrázek pozadí
+        tv = (TextView) findViewById(cz.socialskills.minaj.social_skills.R.id.textView);            // Text pro scénu
+        ib1 = (ImageButton) findViewById(cz.socialskills.minaj.social_skills.R.id.imageButton);     // Tlačítko další obrázek
+        ib2 = (ImageButton) findViewById(cz.socialskills.minaj.social_skills.R.id.imageButton2);    // Tlačítko přechozí obrázek
+        ib3 = (ImageButton) findViewById(cz.socialskills.minaj.social_skills.R.id.imageButton3);    // Tlačítko ukončit scénu
+        ib4 = (ImageButton) findViewById(cz.socialskills.minaj.social_skills.R.id.imageButton4);    // Tlačítko zpět
+        lv = (ListView) findViewById(cz.socialskills.minaj.social_skills.R.id.menuListView);        // Menu
         //lv2 = (ListView) findViewById(R.id.menuListView2);      // Menu 2
 
         dir = new File(path);                                   // Složka pro aplikaci
@@ -180,25 +176,25 @@ public class MainActivity extends FragmentActivity {
     private void setMenu(int i) {
         switch(i) {
             case -1: //Hlavní menu
-                fmenu_a = new ArrayAdapter<String>(MainActivity.this, R.layout.centerviewlist, new String[]{"Hlavní scény", "Stažené scény", "Analýza", "O aplikaci"});
+                fmenu_a = new ArrayAdapter<String>(MainActivity.this, cz.socialskills.minaj.social_skills.R.layout.centerviewlist, new String[]{"Hlavní scény", "Stažené scény", "Analýza", "O aplikaci"});
                 lv.setAdapter(fmenu_a);
                 //Toast.makeText(MainActivity.this , exScenes.get(0).toString() , Toast.LENGTH_SHORT).show();
                 break;
             case 0: // Hlavní scény
-                fmenu_a = new ArrayAdapter<String>(MainActivity.this, R.layout.centerviewlist, assetlist(""));
+                fmenu_a = new ArrayAdapter<String>(MainActivity.this, cz.socialskills.minaj.social_skills.R.layout.centerviewlist, assetlist(""));
                 lv.setAdapter(fmenu_a);
                 break;
             case 1: // Stažené scény
-                fmenu_a = new ArrayAdapter<String>(MainActivity.this, R.layout.centerviewlist, exScenes);
+                fmenu_a = new ArrayAdapter<String>(MainActivity.this, cz.socialskills.minaj.social_skills.R.layout.centerviewlist, exScenes);
                 lv.setAdapter(fmenu_a);
                 break;
             case 2: // Analýza
-                fmenu_a = new ArrayAdapter<String>(MainActivity.this, R.layout.centerviewlist, new String[]{"3 První", "3 Druhá", "3 Třetí", "3 Čtvrtá"});
+                fmenu_a = new ArrayAdapter<String>(MainActivity.this, cz.socialskills.minaj.social_skills.R.layout.centerviewlist, new String[]{"3 První", "3 Druhá", "3 Třetí", "3 Čtvrtá"});
                 lv.setAdapter(fmenu_a);
                 //Toast.makeText(MainActivity.this, Integer.toString(devHeight), Toast.LENGTH_SHORT).show();
                 break;
             case 3: // O aplikaci
-                fmenu_a = new ArrayAdapter<String>(MainActivity.this, R.layout.centerviewlist, new String[]{"4 První", "4 Druhá", "4 Třetí", "4 Čtvrtá"});
+                fmenu_a = new ArrayAdapter<String>(MainActivity.this, cz.socialskills.minaj.social_skills.R.layout.centerviewlist, new String[]{"4 První", "4 Druhá", "4 Třetí", "4 Čtvrtá"});
                 lv.setAdapter(fmenu_a);
                 break;
         }
@@ -275,7 +271,7 @@ public class MainActivity extends FragmentActivity {
         ib1.setVisibility(View.VISIBLE);
         ib3.setVisibility(View.VISIBLE);
         ib4.setVisibility(View.INVISIBLE);
-        ib1.setImageResource(R.drawable.rightarrow);
+        ib1.setImageResource(cz.socialskills.minaj.social_skills.R.drawable.rightarrow);
         //Toast.makeText(MainActivity.this, menuclick, Toast.LENGTH_SHORT).show();
         slides = null;
         if (chosen_menu == 0){
@@ -501,7 +497,7 @@ public class MainActivity extends FragmentActivity {
         lv.setVisibility(View.VISIBLE);
         ib3.setVisibility(View.INVISIBLE);
         ib4.setVisibility(View.INVISIBLE);
-        iv.setImageResource(R.drawable.socialskills);
+        iv.setImageResource(cz.socialskills.minaj.social_skills.R.drawable.socialskills);
         chosen_menu = -1;
     }
 //
@@ -523,7 +519,7 @@ public class MainActivity extends FragmentActivity {
         if (next == slides.getSlides().length - 1) {
             //ib = (ImageButton) findViewById(R.id.imageButton);
             //ib.setVisibility(View.INVISIBLE);
-            ib1.setImageResource(R.drawable.repeat);
+            ib1.setImageResource(cz.socialskills.minaj.social_skills.R.drawable.repeat);
 
         } else if (next == slides.getSlides().length) {
             next = 0;
@@ -531,7 +527,7 @@ public class MainActivity extends FragmentActivity {
             //ib = (ImageButton) findViewById(R.id.imageButton2);
             ib2.setVisibility(View.INVISIBLE);
             //ib = (ImageButton) findViewById(R.id.imageButton);
-            ib1.setImageResource(R.drawable.rightarrow);
+            ib1.setImageResource(cz.socialskills.minaj.social_skills.R.drawable.rightarrow);
             //ib1.setVisibility(View.VISIBLE);
 
         } else {
@@ -543,12 +539,12 @@ public class MainActivity extends FragmentActivity {
 
     public void prevImg(View view) {
         int prev = slides.getPlace()- 1;
-        ib1.setImageResource(R.drawable.rightarrow);
+        ib1.setImageResource(cz.socialskills.minaj.social_skills.R.drawable.rightarrow);
 
         if (prev == 0){
             ib2.setVisibility(View.INVISIBLE);
         } else {
-            ib1.setImageResource(R.drawable.rightarrow);
+            ib1.setImageResource(cz.socialskills.minaj.social_skills.R.drawable.rightarrow);
         }
         showImg(prev);
     }
